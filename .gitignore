@@ -1,3 +1,15 @@
+# fichiers maven a ignorer
+target
+
+# fichiers Eclipse a ignorer
+.classpath
+.project
+.settings
+
+# fichiers Intellij IDEA a ignorer
+.idea
+*.iml
+
 # Compiled class file
 *.class
 
