@@ -16,13 +16,13 @@ public class Connexion extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connexion);  //Définition de la vue principale
-        Button button = (Button) findViewById(R.id.connexionButton);   //Appel de buttonConnexion"
+        Button button = (Button) findViewById(R.id.connexionButton);   //Appel du bouton de connexion"
         button.setOnClickListener(new View.OnClickListener()      //Creation du listener sur ce bouton
         {
             public void onClick(View actuelView)    //au clic sur le bouton
             {
                 Intent intent = new Intent(Connexion.this, Accueil.class);  //Lancer l'activité Coupon
-                startActivity(intent);    //Afficher la vue-------------------------------------------------------------------------------------------------------------------------------------
+                startActivity(intent);    //Afficher la vue
             }
         });
     }
