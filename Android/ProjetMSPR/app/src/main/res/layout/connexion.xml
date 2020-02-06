@@ -24,8 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="identifiant" />
+            android:hint="Identifiant"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/motDePasse"
@@ -34,6 +34,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:ems="10"
+            android:hint="Mot de passe"
             android:inputType="textPassword" />
 
         <Button

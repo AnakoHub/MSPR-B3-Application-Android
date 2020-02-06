@@ -7,7 +7,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Coupon extends AppCompatActivity {
-    public void onCreate(Bundle savedInstanceState) //A la   creation de la vue
+    public void onCreate(Bundle savedInstanceState) //A la création de la vue
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coupon); //Afficher la vue portant le nom "coupon"
