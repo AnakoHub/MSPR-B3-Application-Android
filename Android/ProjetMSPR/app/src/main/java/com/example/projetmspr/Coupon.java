@@ -10,7 +10,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ *
+ */
 public class Coupon extends AppCompatActivity {
+    /**
+     *
+     * @param savedInstanceState
+     */
     public void onCreate(Bundle savedInstanceState) //A la   creation de la vue
     {
         super.onCreate(savedInstanceState);
