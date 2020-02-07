@@ -10,6 +10,7 @@ public class Promotion {
 	
 	private String description;
 	private String lien;
+	
 	public String getCode() {
 		return code;
 	}
