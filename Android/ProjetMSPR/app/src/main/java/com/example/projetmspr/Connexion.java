@@ -6,25 +6,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import android.widget.ImageView;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class Connexion extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);  //Définition de la vue principale
-       /* ImageView imageView = (ImageView) findViewById(R.id.coupon1);   //Appel de l'imageView2"
-        imageView.setOnClickListener(new View.OnClickListener()      //Creation du listener sur ce bouton
+        setContentView(R.layout.connexion);  //Définition de la vue principale
+        Button button = (Button) findViewById(R.id.connexionButton);   //Appel du bouton de connexion"
+        button.setOnClickListener(new View.OnClickListener()      //Creation du listener sur ce bouton
         {
             public void onClick(View actuelView)    //au clic sur le bouton
             {
-                Intent intent = new Intent(MainActivity.this, Coupon.class);  //Lancer l'activité Coupon
+                Intent intent = new Intent(Connexion.this, Accueil.class);  //Lancer l'activité Coupon
                 startActivity(intent);    //Afficher la vue
             }
         });
-    }*/
     }
 }
+
+
+
+
