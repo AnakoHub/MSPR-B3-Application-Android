@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ProjetMSPR</string>
+    <string name="result_text_default">Maintenez la camera proche du QR Code</string>
+</resources>
