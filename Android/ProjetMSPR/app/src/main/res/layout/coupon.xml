@@ -75,10 +75,13 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:text="ad2cS4rt23mlp9o" />
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/black"
+        android:text="ad2cS4rt23mlp9o"
+        android:visibility="invisible" />
 
 
 </LinearLayout>
