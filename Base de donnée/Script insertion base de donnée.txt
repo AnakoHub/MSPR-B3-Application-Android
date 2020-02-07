@@ -1,6 +1,0 @@
-INSERT INTO Utilisateur(`pseudo`, `mot_de_passe`, `prenom`, `nom`, `email`, `adresse`) VALUES ("anako", SHA2("abc", 224), "anael", "akouete", "anael.akouete@epsi.fr", "114 rue Lucien Faure");
-INSERT INTO Utilisateur(`pseudo`, `mot_de_passe`, `prenom`, `nom`, `email`, `adresse`) VALUES ("anomoineau", SHA2("motdepasse", 224), "Elizee", "Moineau", "elizez.moineau@epsi.fr", "37 Cours de la Marne");
-INSERT INTO Utilisateur(`pseudo`, `mot_de_passe`, `prenom`, `nom`, `email`, `adresse`) VALUES ("donatelo", SHA2("password123", 224), "Amaru", "Shakur", "amaru.shakur@epsi.fr", "74 rue Saint-François");
-
-
-INSERT INTO Promotion(
