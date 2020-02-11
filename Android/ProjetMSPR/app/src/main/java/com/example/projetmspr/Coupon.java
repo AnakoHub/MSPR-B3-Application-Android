@@ -15,6 +15,7 @@ public class Coupon extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coupon); //Afficher la vue portant le nom "coupon"
+        showBackBtn();
         Button button = (Button) findViewById(R.id.button);   //Appel du bouton pour afficher la liste de coupon
         button.setOnClickListener(new View.OnClickListener()      //Creation du listener sur ce bouton
         {
