@@ -5,6 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Promotion {
+	
 	@Id
 	private String code;
 	
