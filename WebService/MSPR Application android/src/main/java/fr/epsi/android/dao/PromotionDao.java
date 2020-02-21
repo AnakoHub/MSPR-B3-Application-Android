@@ -1,11 +1,11 @@
-package fr.epsi.androiddao;
+package fr.epsi.android.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import fr.epsi.androidmodele.Promotion;
+import fr.epsi.android.modele.Promotion;
 
 @Repository
 public class PromotionDao {

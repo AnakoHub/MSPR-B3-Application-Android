@@ -1,10 +1,10 @@
-package fr.epsi.androidservice;
+package fr.epsi.android.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.epsi.androiddao.PromotionDao;
-import fr.epsi.androidmodele.Promotion;
+import fr.epsi.android.dao.PromotionDao;
+import fr.epsi.android.modele.Promotion;
 
 @Service
 public class PromotionService {

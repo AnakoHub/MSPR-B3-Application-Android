@@ -1,4 +1,4 @@
-package fr.epsi.androidmodele;
+package fr.epsi.android.modele;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,10 +7,12 @@ import javax.persistence.Id;
 public class Promotion {
 	
 	@Id
+	private int id;
+	
 	private String code;
 	
+	private String nom;
 	private String description;
-	private String lien;
 	
 	public String getCode() {
 		return code;
@@ -24,11 +26,17 @@ public class Promotion {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getLien() {
-		return lien;
+	public int getId() {
+		return id;
 	}
-	public void setLien(String lien) {
-		this.lien = lien;
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 	
 }
