@@ -63,10 +63,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     content += "Code: " + Promotion.getCode() + "\n";
                     content += "Nom: " + Promotion.getNom() + "\n";
                     content += "Description: " + Promotion.getDescription() + "\n";
-                   /* content += "userID: " + Post.getUserId() + "\n";
-                    content += "ID: " + Post.getId() + "\n";
-                    content += "Title: " + Post.getTitle() + "\n";
-                    content += "Text " + Post.getText() + "\n";*/
 
                     textViewResult.append(content);
                 }
