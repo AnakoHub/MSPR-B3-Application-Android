@@ -50,7 +50,10 @@ public class PromotionControleur {
 		listPromotion.add(promotion2);
 		
 		return listPromotion;
-	}	
+	}
+	
+	@PostMapping(path = "/login", consumes = "application/json")
+	public C
 	
 //	@PostMapping(path = "/liste_promotion/{codePromotion}", produces = "application/json")
 //	public ResponseEntity<Promotion> getListePromotion(@RequestBody PromotionDto promotionDto, UriComponentsBuilder uriBuilder,@PathVariable String codePromotion) {
