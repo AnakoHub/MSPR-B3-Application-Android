@@ -16,12 +16,14 @@ public class PromotionDao {
 	private EntityManager em;
 	
 	/**
-	 * Permet de recuperer une promotion specifique selon son code
+	 * Permet de recuperer une promotion specifique selon son code dans la base de données
 	 * @param code Code de la promotion 
 	 * @return Une promotion
 	 */
 	public Promotion getPromoByCode(String code) {
-		return em.find(Promotion.class, code);
+		return em.createQuery("SELECT p FROM Pizza p WHERE p.code = :code", Promotion.class)
+				.setParameter("code", code)
+				.getSingleResult();
 	}
 	
 	/**
@@ -29,6 +31,7 @@ public class PromotionDao {
 	 * @return Liste de toutes les promotions
 	 */
 	public List<Promotion> getAllPromotion(){
-		return (List<Promotion>) em.createQuery("SELECT * FROM Promotion p");
+		return em.createQuery("SELECT * FROM Promotion p", Promotion.class)
+				.getResultList();
 	}
 }

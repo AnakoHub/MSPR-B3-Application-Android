@@ -29,6 +29,7 @@ public class PromotionControleur {
 	
 	/**
 	 * Fonction test pour verifier la connexion entre le webservice et l'application
+	 * avec deux Promotion entrées en dure
 	 * @return promotion objet JSON
 	 */
 	@GetMapping(path="/test-appel", produces = "application/json")
@@ -52,8 +53,26 @@ public class PromotionControleur {
 		return listPromotion;
 	}
 	
+	/**
+	 * Recupère la liste de promotion depuis la couche service pour le transmettre a la vue
+	 * @return La liste de toutes les promotions depuis la couche service
+	 */
 	@GetMapping(path = "/liste-promotions", produces = "application/json")
-	public List<Promotion> 
+	public List<Promotion> getAllPromotion() {
+		List<Promotion> promotions = promotionService.getAllPromotion();
+		return promotions;
+	}
+	
+	/**
+	 * Recupère les détails d'une promotion grâce a son code
+	 * @param idCode Code de la promotion
+	 * @return La promotion correspondant au code envoyé dans la requête
+	 */
+	@GetMapping(path = "/details/{idCode}", produces = "application/json")
+	public Promotion getPromotion(@PathVariable String idCode) {
+		return promotionService.getPromoByCode(idCode);
+	}
+	
 	
 //	@PostMapping(path = "/liste_promotion/{codePromotion}", produces = "application/json")
 //	public ResponseEntity<Promotion> getListePromotion(@RequestBody PromotionDto promotionDto, UriComponentsBuilder uriBuilder,@PathVariable String codePromotion) {
