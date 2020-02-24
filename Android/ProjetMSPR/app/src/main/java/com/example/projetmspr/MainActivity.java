@@ -26,20 +26,51 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
+/**
+ * <b>MainActivity is the classe will execute the functionnality of MainActivity view  </b>
+ *
+ * @author Ludivine CAPELLI
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     private TextView textViewResult;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);  //Définition de la vue principale
+        /**
+         *
+         * Method to define the main view
+         *
+         */
+        setContentView(R.layout.activity_main);
+        /**
+         * method showBackButton is called
+         */
         showBackBtn();
 
+        /**
+         *
+         * textView is called for give access to the coupon view
+         *
+         */
         textViewResult = findViewById(R.id.activity_main_promotion);
+        textViewResult.setOnClickListener(new View.OnClickListener()      //Creation du listener sur ce bouton
+        {
+            /**
+             * Method to display the view when clicking on the accueil view
+             *
+             * @param v
+             */
+            public void onClick(View actuelView)    //au clic sur le bouton
+            {
+                Intent intent = new Intent(MainActivity.this, Coupon.class);  //Lancer l'activité Coupon
+                startActivity(intent);    //Afficher la vue
+            }
+        });
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.32:9000/")
+                .baseUrl("http://172.20.10.2:9384/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -76,6 +107,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    /**
+     * Method to show the image view when the method is call
+     */
     protected void showBackBtn(){
         ImageView imageView=findViewById(R.id.imageViewClose);
         if(imageView!=null) {
@@ -84,7 +118,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
+    /**
+     * Method to display the view when clicking on the image view
+     *
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()){

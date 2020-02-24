@@ -36,6 +36,8 @@
                 android:id="@+id/activity_main_promotion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
                 android:textColor="#000" />
         </LinearLayout>
 

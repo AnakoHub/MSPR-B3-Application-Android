@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Coupon extends AppCompatActivity {
+import com.example.webservice.Promotion;
+
+public class Coupon extends AppCompatActivity implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) //A la   creation de la vue
     {
         super.onCreate(savedInstanceState);
@@ -21,12 +23,36 @@ public class Coupon extends AppCompatActivity {
         {
             public void onClick(View actuelView)    //au clic sur le bouton
             {
-                showBackBtn();
+                showBackCode();
             }
         });
     }
 
+    /**
+     * Method to show the image view when the method is call
+     */
     protected void showBackBtn(){
+        ImageView imageView=findViewById(R.id.imageViewClose);
+        if(imageView!=null) {
+            imageView.setVisibility(View.VISIBLE);
+            imageView.setOnClickListener(this);
+        }
+    }
+    /**
+     * Method to display the view when clicking on the image view
+     *
+     * @param v
+     */
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.imageViewClose:
+                finish();
+                break;
+        }
+    }
+
+    protected void showBackCode(){
         TextView textView=findViewById(R.id.textView3);
         if(textView!=null){
             textView.setVisibility(View.VISIBLE);
