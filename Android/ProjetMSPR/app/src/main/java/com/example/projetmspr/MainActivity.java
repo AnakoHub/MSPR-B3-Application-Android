@@ -7,17 +7,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
 import com.example.webservice.GoStyleApi;
 import com.example.webservice.Promotion;
 import com.example.webservice.Promotion;
 import com.example.webservice.Promotion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -34,6 +39,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textViewResult;
+    private MutableLiveData<List<Promotion>> listMutableLiveData = new MutableLiveData<>();
+    private List<Promotion> promotions = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,20 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          * textView is called for give access to the coupon view
          *
          */
-        textViewResult = findViewById(R.id.activity_main_promotion);
-        textViewResult.setOnClickListener(new View.OnClickListener()      //Creation du listener sur ce bouton
-        {
-            /**
-             * Method to display the view when clicking on the accueil view
-             *
-             * @param v
-             */
-            public void onClick(View actuelView)    //au clic sur le bouton
-            {
-                Intent intent = new Intent(MainActivity.this, Coupon.class);  //Lancer l'activité Coupon
-                startActivity(intent);    //Afficher la vue
-            }
-        });
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://172.20.10.2:9384/")
@@ -86,9 +80,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     return;
                 }
 
-                List<Promotion> Promotions = response.body();
-
-                for(Promotion Promotion : Promotions) {
+                promotions = response.body();
+                listMutableLiveData.setValue(promotions);
+            /*    for(Promotion Promotion : Promotions) {
                     String content = "";
                     content += "ID: " + Promotion.getId() + "\n";
                     content += "Code: " + Promotion.getCode() + "\n";
@@ -96,7 +90,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     content += "Description: " + Promotion.getDescription() + "\n";
 
                     textViewResult.append(content);
-                }
+                }*/
+
+
             }
 
             @Override
@@ -105,14 +101,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        PromotionAdapter promotionAdapter = new PromotionAdapter(this, promotions);
+        ListView listView = (ListView) findViewById(R.id.activity_main_promotion);
+        listView.setAdapter(promotionAdapter);
+        listMutableLiveData.observe(this, new Observer<List<Promotion>>() {
+            @Override
+            public void onChanged(List<Promotion> promotions) {
+                promotionAdapter.clear();
+                promotionAdapter.addAll(promotions);
+                promotionAdapter.notifyDataSetChanged();
+            }
+        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Promotion promotion = (Promotion) parent.getItemAtPosition(position);
+                Intent intent = new Intent(MainActivity.this,Coupon.class);
+                intent.putExtra("promo",promotion);
+
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     /**
      * Method to show the image view when the method is call
      */
-    protected void showBackBtn(){
-        ImageView imageView=findViewById(R.id.imageViewClose);
-        if(imageView!=null) {
+    protected void showBackBtn() {
+        ImageView imageView = findViewById(R.id.imageViewClose);
+        if (imageView != null) {
             imageView.setVisibility(View.VISIBLE);
             imageView.setOnClickListener(this);
         }
@@ -125,10 +144,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.imageViewClose:
                 finish();
                 break;
         }
+    }
+
+    public void ChangeActivity(View view) {
+        Intent intent = new Intent(this, Coupon.class);
+        startActivity(intent);
     }
 }

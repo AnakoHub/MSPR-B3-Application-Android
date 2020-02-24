@@ -1,5 +1,7 @@
 package fr.epsi.android.modele;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -10,8 +12,9 @@ public class Promotion {
 	private int id;
 	
 	private String code;
-	
 	private String nom;
+	private String url;
+	private String date;
 	private String description;
 	
 	public String getCode() {
@@ -20,6 +23,12 @@ public class Promotion {
 	public void setCode(String code) {
 		this.code = code;
 	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	} 
 	public String getDescription() {
 		return description;
 	}
@@ -32,6 +41,12 @@ public class Promotion {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	} 
 	public String getNom() {
 		return nom;
 	}

@@ -2,6 +2,7 @@ package fr.epsi.android.controleur;
 
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,13 +37,17 @@ public class PromotionControleur {
 		Promotion promotion1 = new Promotion();
 		promotion1.setId(1);
 		promotion1.setCode("IOBI7488");
+		promotion1.setDate("31 Mars 2019");
 		promotion1.setNom("Promotion test");
+		promotion1.setUrl("basket");
 		promotion1.setDescription("Produit test");
 		
 		Promotion promotion2 = new Promotion();
 		promotion2.setId(2);
 		promotion2.setCode("IOFAIO213");
+		promotion2.setDate("15 Mars 2019");
 		promotion2.setNom("Promotion test 2");
+		promotion1.setUrl("teeshirt");
 		promotion2.setDescription("2ème produit test");
 		
 		List<Promotion> listPromotion = new ArrayList<Promotion>();
