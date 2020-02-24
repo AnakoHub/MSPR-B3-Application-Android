@@ -24,15 +24,15 @@ import fr.epsi.android.service.PromotionService;
 @RequestMapping("/gostyle")
 public class PromotionControleur {
 	
-//	@Autowired
-//	private PromotionService promotionService;
+	@Autowired
+	private PromotionService promotionService;
 	
 	/**
 	 * Fonction test pour verifier la connexion entre le webservice et l'application
 	 * @return promotion objet JSON
 	 */
-	@GetMapping(path="/promotion", produces = "application/json")
-	public List<Promotion>getPromotion() {
+	@GetMapping(path="/test-appel", produces = "application/json")
+	public List<Promotion>getTest() {
 		Promotion promotion1 = new Promotion();
 		promotion1.setId(1);
 		promotion1.setCode("IOBI7488");
@@ -52,8 +52,8 @@ public class PromotionControleur {
 		return listPromotion;
 	}
 	
-	@PostMapping(path = "/login", consumes = "application/json")
-	public C
+	@GetMapping(path = "/liste-promotions", produces = "application/json")
+	public List<Promotion> 
 	
 //	@PostMapping(path = "/liste_promotion/{codePromotion}", produces = "application/json")
 //	public ResponseEntity<Promotion> getListePromotion(@RequestBody PromotionDto promotionDto, UriComponentsBuilder uriBuilder,@PathVariable String codePromotion) {
