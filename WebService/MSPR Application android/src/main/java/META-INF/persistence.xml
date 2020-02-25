@@ -9,10 +9,6 @@
 		<class>fr.epsi.android.modele.Promotion</class>
 		<class>fr.epsi.android.modele.Client</class>
 		<properties>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mspr_application" />
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="anael" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />	
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />

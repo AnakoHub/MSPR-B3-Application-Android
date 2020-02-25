@@ -37,7 +37,7 @@ public class PromotionControleur {
 	 * avec deux Promotion entrées en dure
 	 * @return promotion objet JSON
 	 */
-	@GetMapping(path="/test-appel", produces = "application/json")
+	@GetMapping(path="/appel-test", produces = "application/json")
 	public List<Promotion>getTest() {
 		Promotion promotion1 = new Promotion();
 		promotion1.setId(1);
