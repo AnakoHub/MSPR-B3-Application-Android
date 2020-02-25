@@ -1,7 +1,7 @@
 CREATE TABLE `Client` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `pseudo` varchar(255),
-  `mot_de_passe` varbinary,
+  `mot_de_passe` varbinary(250),
   `prenom` varchar(255),
   `nom` varchar(255),
   `email` varchar(255),
@@ -9,10 +9,11 @@ CREATE TABLE `Client` (
 );
 
 CREATE TABLE `Promotion` (
-  `id` int PRIMARY KEY,
+  `id` int PRIMARY KEY AUTO_INCREMENT,
   `code` varchar(255),
+  `nom` varchar(255),
   `description` varchar(255),
-  `lien` varchar(255)
+  `image` varchar(255)
 );
 
 CREATE TABLE `Client_Promotion` (

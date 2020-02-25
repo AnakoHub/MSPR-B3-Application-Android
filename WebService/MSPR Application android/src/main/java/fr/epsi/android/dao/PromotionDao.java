@@ -9,6 +9,12 @@ import org.springframework.stereotype.Repository;
 
 import fr.epsi.android.modele.Promotion;
 
+/**
+ * Couche d'acces au données pour les requêtes sur la base de données des promotions
+ * @author Anael Akouété
+ *
+ */
+
 @Repository
 public class PromotionDao {
 	
@@ -21,7 +27,7 @@ public class PromotionDao {
 	 * @return Une promotion
 	 */
 	public Promotion getPromoByCode(String code) {
-		return em.createQuery("SELECT p FROM Pizza p WHERE p.code = :code", Promotion.class)
+		return em.createQuery("SELECT p FROM Promotion p WHERE p.code = :code", Promotion.class)
 				.setParameter("code", code)
 				.getSingleResult();
 	}

@@ -1,4 +1,4 @@
-package fr.epsi.android.service;
+package fr.epsi.android.dto;
 
 public class ClientDto {
 	
