@@ -27,8 +27,8 @@ import fr.epsi.android.service.PromotionService;
 @RequestMapping("/gostyle")
 public class PromotionControleur {
 	
-	@Autowired
-	private PromotionService promotionService;
+//	@Autowired
+//	private PromotionService promotionService;
 //	@Autowired
 //	private ClientService clientService;
 	
@@ -75,22 +75,22 @@ public class PromotionControleur {
 	 * Recupère la liste de promotion depuis la couche service pour le transmettre a la vue
 	 * @return La liste de toutes les promotions depuis la couche service
 	 */
-	@GetMapping(path = "/liste-promotions", produces = "application/json")
-	public List<Promotion> getAllPromotion() {
-		List<Promotion> promotions = promotionService.getAllPromotion();
-		return promotions;
-	}
+//	@GetMapping(path = "/liste-promotions", produces = "application/json")
+//	public List<Promotion> getAllPromotion() {
+//		List<Promotion> promotions = promotionService.getAllPromotion();
+//		return promotions;
+//	}
 	
 	/**
 	 * Recupère les détails d'une promotion grâce a son code
 	 * @param codePromotion Code de la promotion
 	 * @return La promotion correspondant au code envoyé dans la requête
 	 */
-	@GetMapping(path = "/details/{codePromotion}", produces = "application/json")
-	public Promotion getPromotion(@PathVariable String codePromotion) {
-		return promotionService.getPromoByCode(codePromotion);
-	}
-	
+//	@GetMapping(path = "/details/{codePromotion}", produces = "application/json")
+//	public Promotion getPromotion(@PathVariable String codePromotion) {
+//		return promotionService.getPromoByCode(codePromotion);
+//	}
+//	
 //	@PostMapping(path = "/details/{codePromotion}", produces = "application/json")
 //	public ResponseEntity<Promotion> getListePromotion(@RequestBody PromotionDto promotionDto, UriComponentsBuilder uriBuilder,@PathVariable String codePromotion) {
 //		Promotion promotion = promotionService.getPromoByCode(promotionDto.getCode(codePromotion));
