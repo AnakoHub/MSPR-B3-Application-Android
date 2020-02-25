@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:id="@+id/camerapreview"
+        android:layout_width="match_parent"
+        android:layout_height="418dp"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/textView"
+        android:layout_below="@+id/camerapreview"
+        android:layout_marginTop="20dp"
+        android:text="Maintenez la camera près du qr code"
+        android:textSize="18sp"
+        android:gravity="center"
+        />
+
+</LinearLayout>
