@@ -1,4 +1,4 @@
-package fr.epsi.android.dao;
+package fr.epsi.androiddao;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import fr.epsi.android.modele.Promotion;
+import fr.epsi.androidmodele.Promotion;
 
 /**
  * Couche d'acces au données pour les requêtes sur la base de données des promotions
