@@ -11,3 +11,6 @@ Les éléments ont été implémentés suivant le modèle MVC :
   - les classes contiennent les données métier
  
 Grâce à cette architecture multicouche, qui permet de bien séparer le code, l'application est plus facilement modulable, souple, évolutive et testable.
+
+Voici un schéma de la base de données:
+![Schema de la base de données] (./Base de donnée/MSPRApplicationAndroid.JPG)
