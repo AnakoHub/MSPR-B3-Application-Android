@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          *
          */
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.20.10.2:9384/")
+                .baseUrl("http://10.0.2.2:8080/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -86,6 +86,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     textViewResult.append(content);
                 }*/
 
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Promotion>> call, Throwable t) {
 
             }
         });

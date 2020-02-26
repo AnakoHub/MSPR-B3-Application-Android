@@ -26,7 +26,7 @@ import fr.epsi.android.service.ClientService;
 import fr.epsi.android.service.PromotionService;
 
 @RestController
-@RequestMapping("/mspr")
+@RequestMapping("/gostyle")
 public class PromotionControleur {
 	
 	@Autowired

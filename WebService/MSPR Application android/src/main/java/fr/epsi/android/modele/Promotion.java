@@ -17,6 +17,7 @@ public class Promotion {
 	private String nom;
 	private String description;
 	private String image;
+	private String expiration;
 	
 	public String getCode() {
 		return code;
@@ -47,5 +48,11 @@ public class Promotion {
 	}
 	public void setImage(String image) {
 		this.image = image;
+	}
+	public String getExpiration() {
+		return expiration;
+	}
+	public void setExpiration(String expiration) {
+		this.expiration = expiration;
 	}
 }
