@@ -16,7 +16,8 @@ public class Promotion {
 	
 	private String nom;
 	private String description;
-	private String image;
+	private String url;
+	private String date;
 	
 	public String getCode() {
 		return code;
@@ -42,10 +43,17 @@ public class Promotion {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public String getImage() {
-		return this.image;
+	public String getUrl() {
+		return url;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setUrl(String url) {
+		this.url = url;
 	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	
 }

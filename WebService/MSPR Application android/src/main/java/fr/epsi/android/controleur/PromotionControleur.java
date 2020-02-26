@@ -26,7 +26,7 @@ import fr.epsi.android.service.ClientService;
 import fr.epsi.android.service.PromotionService;
 
 @RestController
-@RequestMapping("/mspr")
+@RequestMapping("/gostyle")
 public class PromotionControleur {
 	
 	@Autowired
@@ -44,14 +44,18 @@ public class PromotionControleur {
 		Promotion promotion1 = new Promotion();
 		promotion1.setId(1);
 		promotion1.setCode("IOBI7488");
+		promotion1.setUrl("polo");
 		promotion1.setNom("Promotion test");
 		promotion1.setDescription("Produit test");
+		promotion1.setDate("2019-03-01");
 		
 		Promotion promotion2 = new Promotion();
 		promotion2.setId(2);
 		promotion2.setCode("IOFAIO213");
+		promotion2.setUrl("tshirt");
 		promotion2.setNom("Promotion test 2");
 		promotion2.setDescription("2ème produit test");
+		promotion2.setDate("2020-06-01");
 		
 		List<Promotion> listPromotion = new ArrayList<Promotion>();
 		listPromotion.add(promotion1);
@@ -93,10 +97,10 @@ public class PromotionControleur {
 //		return promotionService.getPromoByCode(codePromotion);
 //	}
 //	
-//	@PostMapping(path = "/details/{codePromotion}", produces = "application/json")
-//	public ResponseEntity<Promotion> getListePromotion(@RequestBody PromotionDto promotionDto, UriComponentsBuilder uriBuilder,@PathVariable String codePromotion) {
-//		Promotion promotion = promotionService.getPromoByCode(promotionDto.getCode(codePromotion));
-//		URI uri = uriBuilder.path("/gostyle/liste_promotion/" + promotion.getCode()).build().toUri();
-//		return ResponseEntity.created(uri).body(promotion);
-//	}
+	@PostMapping(path = "/{codePromotion}", produces = "application/json")
+	public ResponseEntity<Promotion> getListePromotion(@RequestBody PromotionDto promotionDto, UriComponentsBuilder uriBuilder,@PathVariable String codePromotion) {
+		Promotion promotion = promotionService.getPromoByCode(promotionDto.getCode());
+		URI uri = uriBuilder.path("/gostyle/liste_promotion/details/" + promotion.getCode()).build().toUri();
+		return ResponseEntity.created(uri).body(promotion);
+	}
 }
