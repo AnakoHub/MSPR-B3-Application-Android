@@ -6,6 +6,7 @@ target
 .project
 .settings
 .metadata
+Servers
 
 # fichiers Intellij IDEA a ignorer
 .idea
