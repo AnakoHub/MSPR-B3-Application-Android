@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          *
          */
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8080/")
+                .baseUrl("http://192.168.1.32:8080/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -73,20 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     textViewResult.setText("Code: " + response.code());
                     return;
                 }
-
                 promotions = response.body();
                 listMutableLiveData.setValue(promotions);
-            /*    for(Promotion Promotion : Promotions) {
-                    String content = "";
-                    content += "ID: " + Promotion.getId() + "\n";
-                    content += "Code: " + Promotion.getCode() + "\n";
-                    content += "Nom: " + Promotion.getNom() + "\n";
-                    content += "Description: " + Promotion.getDescription() + "\n";
-
-                    textViewResult.append(content);
-                }*/
-
-
             }
 
             @Override
@@ -116,7 +104,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
             }
         });
-
 
     }
 

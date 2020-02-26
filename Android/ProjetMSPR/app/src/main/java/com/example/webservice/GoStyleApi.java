@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface GoStyleApi {
 
-    @GET("mspr/gostyle/liste-promotion")
+    @GET("mspr/gostyle/test")
     Call<List<Promotion>> getPromotion();
 }
