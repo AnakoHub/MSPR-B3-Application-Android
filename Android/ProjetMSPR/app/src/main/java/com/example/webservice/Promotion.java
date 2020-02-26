@@ -3,7 +3,6 @@ package com.example.webservice;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Promotion implements Serializable {
 
@@ -11,11 +10,11 @@ public class Promotion implements Serializable {
 
     private String code;
 
-    private String url;
+    private String image;
 
     private String nom;
 
-    private String date;
+    private String expiration;
 
     private String description;
 
@@ -23,9 +22,9 @@ public class Promotion implements Serializable {
 
     public String getNom() { return nom; }
 
-    public String getUrl() { return url; }
+    public String getImage() { return image; }
 
-    public String getDate() { return date; }
+    public String getExpiration() { return expiration; }
 
     public String getCode() { return code; }
 

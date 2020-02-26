@@ -40,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private MutableLiveData<List<Promotion>> listMutableLiveData = new MutableLiveData<>();
     private List<Promotion> promotions = new ArrayList<>();
 
+    /**
+     * Method to define the main view of the app
+     * @param savedInstanceState
+     */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         /**
@@ -74,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     textViewResult.setText("Code: " + response.code());
                     return;
                 }
-
                 promotions = response.body();
                 listMutableLiveData.setValue(promotions);
             }
@@ -108,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-
     }
 
     /**
@@ -136,6 +138,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     *
+     * @param view
+     */
     public void ChangeActivity(View view) {
         Intent intent = new Intent(this, Coupon.class);
         startActivity(intent);

@@ -22,11 +22,11 @@ public class Coupon extends AppCompatActivity implements View.OnClickListener {
         TextView textView = (TextView) findViewById(R.id.Titre);
         textView.setText(promotion.getNom());
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
-        imageView.setTag("@drawable/"+promotion.getUrl());
+        imageView.setTag("@drawable/"+promotion.getImage());
         TextView textView2 = (TextView) findViewById(R.id.Description);
         textView2.setText(promotion.getDescription());
         TextView textView3 = (TextView) findViewById(R.id.Date);
-        textView3.setText("Valable jusqu'au" + promotion.getDate());
+        textView3.setText("Valable jusqu'au" + promotion.getExpiration());
         TextView textView4 = (TextView) findViewById(R.id.code);
         textView4.setText(promotion.getCode());
 
