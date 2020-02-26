@@ -17,6 +17,9 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
 
+import com.example.webservice.GoStyleApi;
+import com.example.webservice.Promotion;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,13 +40,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private MutableLiveData<List<Promotion>> listMutableLiveData = new MutableLiveData<>();
     private List<Promotion> promotions = new ArrayList<>();
 
+    /**
+     * Method to define the main view of the app
+     * @param savedInstanceState
+     */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /**
-         *
-         * Method to define the main view
-         *
-         */
         setContentView(R.layout.activity_main);
         /**
          * method showBackButton is called
@@ -55,8 +57,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          * textView is called for give access to the coupon view
          *
          */
-
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://172.20.10.2:9384/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        PromotionAdapter promotionAdapter = new PromotionAdapter(this, promotions);
+        final PromotionAdapter promotionAdapter = new PromotionAdapter(this, promotions);
         ListView listView = (ListView) findViewById(R.id.activity_main_promotion);
         listView.setAdapter(promotionAdapter);
         listMutableLiveData.observe(this, new Observer<List<Promotion>>() {
@@ -140,6 +140,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     *
+     * @param view
+     */
     public void ChangeActivity(View view) {
         Intent intent = new Intent(this, Coupon.class);
         startActivity(intent);
