@@ -82,15 +82,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 promotions = response.body();
                 listMutableLiveData.setValue(promotions);
-            /*    for(Promotion Promotion : Promotions) {
-                    String content = "";
-                    content += "ID: " + Promotion.getId() + "\n";
-                    content += "Code: " + Promotion.getCode() + "\n";
-                    content += "Nom: " + Promotion.getNom() + "\n";
-                    content += "Description: " + Promotion.getDescription() + "\n";
-
-                    textViewResult.append(content);
-                }*/
 
 
             }
