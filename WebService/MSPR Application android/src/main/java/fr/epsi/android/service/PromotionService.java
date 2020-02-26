@@ -10,8 +10,8 @@ import fr.epsi.android.dao.PromotionDao;
 import fr.epsi.android.modele.Promotion;
 
 /**
- * Coucher service de l'API web
- * @author Anako
+ * Couche service de l'API web
+ * @author Anaël Akouété
  *
  */
 
@@ -21,6 +21,10 @@ public class PromotionService {
 	@Autowired
 	private PromotionDao promotionDao;
 	
+	/**
+	 * Récupère la liste des promotions depuis la DAO de l'API web
+	 * @return La liste de toutes les promotions récupérer dans la couche DAO
+	 */
 	@Transactional(readOnly = true)
 	public List<Promotion> getAllPromo(){
 		return promotionDao.getAllpromo();
