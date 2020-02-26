@@ -28,7 +28,7 @@ public class PromotionControleurTest  {
     @Test
     public void lApiWebRenvoieUnFichierJSONSurUnAppel() throws Exception {
         mockMvc.perform(get("/gostyle/promotion").contentType(MediaType.APPLICATION_JSON)
-                       .content("{\"code\":\"IOBI7488\",\"description\":\"Produit test\",\"lien\":\"http://epsi.fr\"}")).
+                       .content("{\"id\":\"1\",\"code\":\"IOBI7488\",\"nom\":\"Promotion test\",\"description\":\"Produit test\"}")).
                 andExpect(status().isOk());
     }
     
