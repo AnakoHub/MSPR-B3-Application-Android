@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -24,11 +25,11 @@ import fr.epsi.android.service.ClientService;
 import fr.epsi.android.service.PromotionService;
 
 @RestController
-@RequestMapping("/gostyle")
+@RequestMapping("/mspr")
 public class PromotionControleur {
 	
-//	@Autowired
-//	private PromotionService promotionService;
+	@Autowired
+	private PromotionService promotionService;
 //	@Autowired
 //	private ClientService clientService;
 	
@@ -37,7 +38,7 @@ public class PromotionControleur {
 	 * avec deux Promotion entrées en dure
 	 * @return promotion objet JSON
 	 */
-	@GetMapping(path="/appel-test", produces = "application/json")
+	@GetMapping(path="/test", produces = "application/json")
 	public List<Promotion>getTest() {
 		Promotion promotion1 = new Promotion();
 		promotion1.setId(1);
@@ -75,11 +76,11 @@ public class PromotionControleur {
 	 * Recupère la liste de promotion depuis la couche service pour le transmettre a la vue
 	 * @return La liste de toutes les promotions depuis la couche service
 	 */
-//	@GetMapping(path = "/liste-promotions", produces = "application/json")
-//	public List<Promotion> getAllPromotion() {
-//		List<Promotion> promotions = promotionService.getAllPromotion();
-//		return promotions;
-//	}
+	@GetMapping(path = "/liste-promotion", produces = "application/json")
+	public List<Promotion> getAllPromotion() {
+		List<Promotion> promotions = promotionService.getAllPromo();
+		return promotions;
+	}
 	
 	/**
 	 * Recupère les détails d'une promotion grâce a son code
