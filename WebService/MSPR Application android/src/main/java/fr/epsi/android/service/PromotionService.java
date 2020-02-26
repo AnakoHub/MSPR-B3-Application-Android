@@ -9,6 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import fr.epsi.android.dao.PromotionDao;
 import fr.epsi.android.modele.Promotion;
 
+/**
+ * Coucher service de l'API web
+ * @author Anako
+ *
+ */
+
 @Service
 public class PromotionService {
 	
@@ -18,5 +24,10 @@ public class PromotionService {
 	@Transactional(readOnly = true)
 	public List<Promotion> getAllPromo(){
 		return promotionDao.getAllpromo();
+	}
+	
+	@Transactional(readOnly = true)
+	public Promotion getPromoByCode(String code) {
+		return promotionDao.getPromoByCode(code);
 	}
 }
