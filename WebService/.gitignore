@@ -1,6 +1,3 @@
-#Fichier serveur local a ignorer
-Servers
-
 # fichiers maven a ignorer
 target
 
