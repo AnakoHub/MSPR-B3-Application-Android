@@ -1,6 +1,8 @@
 # MSPR-B3-Application-Android
 L'objectif de ce projet est de créer une application de couponing pour la boutique de vêtement GoStyle, permettant de lier les clients a des offres promotionnelles personnalisées.
 
+Implémentation de la solution suivant le modèle MVC et l’architecture multi-couches (N-Tiers).
+
 Les éléments ont été implémentés suivant le modèle MVC :
 - le DAO qui permet l'accès aux données de la base de données, et la persistance
 - les services contiennent la logique métier.
