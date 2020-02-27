@@ -5,6 +5,7 @@ Implémentation de la solution suivant le modèle MVC et l’architecture multi-
 
 Les éléments ont été implémentés suivant le modèle MVC :
 - le DAO qui permet l'accès aux données de la base de données, et la persistance
+  -> récupération des données concernant les promotions et les clients
 - les services contiennent la logique métier.
 - les controleurs qui gèrent les flux de données entre le modèle, la vue, et le service
 - le modèle qui contient les données et la logique métier:
