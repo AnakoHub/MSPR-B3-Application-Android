@@ -23,6 +23,7 @@ import fr.epsi.android.dto.PromotionDto;
 import fr.epsi.android.modele.Client;
 import fr.epsi.android.modele.Promotion;
 import fr.epsi.android.service.ClientService;
+import fr.epsi.android.service.PromotionIntrouvableException;
 import fr.epsi.android.service.PromotionService;
 
 @RestController
@@ -71,7 +72,7 @@ public class PromotionControleur {
 	 * @return Un objet client correspondant au information du login passé par l'application
 	 */
 //	@PostMapping(path = "/login", produces = "applicaiton/json")
-//	public ResponseEntity<Client> getLog(@RequestBody ClientDto clientDto, UriComponentsBuilder uriBuilder){
+//	public ResponseEntity<Client> getLogin(@RequestBody ClientDto clientDto, UriComponentsBuilder uriBuilder){
 //		Client client = promotionService.;
 //		URI uri = uriBuilder.path("/gostyle/" + clientService.getId());
 //		return ResponseEntity.created(uri);
@@ -88,19 +89,20 @@ public class PromotionControleur {
 	}
 	
 	/**
-	 * Recupère les détails d'une promotion grâce a son code
+	 * Recupère les détails d'une promotion grâce au code passé dans le corp de la requête
 	 * @param codePromotion Code de la promotion
 	 * @return La promotion correspondant au code envoyé dans la requête
 	 */
-//	@GetMapping(path = "/details/{codePromotion}", produces = "application/json")
-//	public Promotion getPromotion(@PathVariable String codePromotion) {
-//		return promotionService.getPromoByCode(codePromotion);
-//	}
-//	
-	@PostMapping(path = "/{codePromotion}", produces = "application/json")
-	public ResponseEntity<Promotion> getListePromotion(@RequestBody PromotionDto promotionDto, UriComponentsBuilder uriBuilder,@PathVariable String codePromotion) {
-		Promotion promotion = promotionService.getPromoByCode(promotionDto.getCode());
-		URI uri = uriBuilder.path("/gostyle/liste_promotion/details/" + promotion.getCode()).build().toUri();
-		return ResponseEntity.created(uri).body(promotion);
+	@PostMapping(path = "/liste-promotion/details", produces = "application/json")
+	public ResponseEntity<Promotion> getListePromotion(@RequestBody PromotionDto promotionDto, UriComponentsBuilder uriBuilder) {
+		Promotion promotion = null;
+		try {
+			promotion = promotionService.getPromoByCode(promotionDto.getCode());
+			URI uri = uriBuilder.path("/gostyle/liste_promotion/details/" + promotion.getCode()).build().toUri();
+			return ResponseEntity.created(uri).body(promotion);
+		} catch (PromotionIntrouvableException e) {
+			e.printStackTrace();
+			return (ResponseEntity<Promotion>) ResponseEntity.notFound();
+		}
 	}
 }

@@ -10,7 +10,7 @@ import fr.epsi.android.dao.PromotionDao;
 import fr.epsi.android.modele.Promotion;
 
 /**
- * Couche service de l'API web
+ * Couche service de l'API web pour le traitement des opérations sur les objets
  * @author Anaël Akouété
  *
  */
@@ -22,7 +22,7 @@ public class PromotionService {
 	private PromotionDao promotionDao;
 	
 	/**
-	 * Récupère la liste des promotions depuis la DAO de l'API web
+	 * Récupère la liste des promotions depuis le DAO de l'API web
 	 * @return La liste de toutes les promotions récupérer dans la couche DAO
 	 */
 	@Transactional(readOnly = true)
@@ -30,8 +30,16 @@ public class PromotionService {
 		return promotionDao.getAllpromo();
 	}
 	
-	@Transactional(readOnly = true)
-	public Promotion getPromoByCode(String code) {
+	/**
+	 * Récupère depuis le DAO la promotion correspondant au code passé en argument
+	 * @param code Code de la promotion
+	 * @return Promotion correspondant au code ou un message d'erreur
+	 */
+	@Transactional(rollbackFor = PromotionIntrouvableException.class)
+	public Promotion getPromoByCode(String code) throws PromotionIntrouvableException {
+		if (promotionDao.getPromoByCode(code).equals(null)) {
+			throw new PromotionIntrouvableException("Aucune promotion correspondant a ce code n'existe !");
+		}
 		return promotionDao.getPromoByCode(code);
 	}
 }
