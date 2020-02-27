@@ -38,49 +38,21 @@ public class PromotionControleur {
 		promotion1.setId(1);
 		promotion1.setCode("IOBI7488");
 		promotion1.setDate("31 Mars 2019");
-		promotion1.setNom("Promotion sur une paire de basket");
+		promotion1.setNom("Promotion test");
 		promotion1.setUrl("basket");
-		promotion1.setDescription("30% de réduction sur une paire de basket dont le prix est supérieur à 50€");
+		promotion1.setDescription("Produit test");
 		
 		Promotion promotion2 = new Promotion();
 		promotion2.setId(2);
 		promotion2.setCode("IOFAIO213");
 		promotion2.setDate("15 Mars 2019");
-		promotion2.setNom("Promotion sur un T-shirt");
-		promotion2.setUrl("tshirt");
-		promotion2.setDescription("20% de réduction sur un T-Shirt dont le prix est supérieur à 25€");
-		
-		Promotion promotion3 = new Promotion();
-		promotion3.setId(3);
-		promotion3.setCode("IOFAIO318");
-		promotion3.setDate("15 Juin 2019");
-		promotion3.setNom("Casquette offerte");
-		promotion3.setUrl("casquette");
-		promotion3.setDescription("Une casquette offerte à partir de 100€ d'achat");
-		
-		Promotion promotion4 = new Promotion();
-		promotion4.setId(4);
-		promotion4.setCode("IOFAIO118");
-		promotion4.setDate("15 Mai 2019");
-		promotion4.setNom("Promotion sur un survêtement");
-		promotion4.setUrl("survetement");
-		promotion4.setDescription("30% sur un survêtement");
-		
-		Promotion promotion5= new Promotion();
-		promotion5.setId(5);
-		promotion5.setCode("IOFAIO218");
-		promotion5.setDate("15 Juillet 2019");
-		promotion5.setNom("Promotion Etudiante");
-		promotion5.setUrl("basket");
-		promotion5.setDescription("50% sur tout le magasin pour les étudiants sous reserve d’un justificatif");
-		
+		promotion2.setNom("Promotion test 2");
+		promotion1.setUrl("teeshirt");
+		promotion2.setDescription("2ème produit test");
 		
 		List<Promotion> listPromotion = new ArrayList<Promotion>();
 		listPromotion.add(promotion1);
 		listPromotion.add(promotion2);
-		listPromotion.add(promotion3);
-		listPromotion.add(promotion4);
-		listPromotion.add(promotion5);
 		
 		return listPromotion;
 	}	
